@@ -1,0 +1,36 @@
+{
+  "listen_host": "127.0.0.1",
+  "listen_port": 8686,
+  "update_time": "15:45",
+  "history_days": 550,
+  "etfs": [
+    {"code": "510300", "symbol": "sh510300", "secid": "1.510300", "name": "沪深300ETF华泰柏瑞", "group": "hs300"},
+    {"code": "510310", "symbol": "sh510310", "secid": "1.510310", "name": "沪深300ETF易方达", "group": "hs300"},
+    {"code": "159919", "symbol": "sz159919", "secid": "0.159919", "name": "沪深300ETF嘉实", "group": "hs300"},
+    {"code": "510050", "symbol": "sh510050", "secid": "1.510050", "name": "上证50ETF华夏", "group": "hs300"},
+    {"code": "510500", "symbol": "sh510500", "secid": "1.510500", "name": "中证500ETF南方", "group": "broad"},
+    {"code": "512100", "symbol": "sh512100", "secid": "1.512100", "name": "中证1000ETF华夏", "group": "broad"},
+    {"code": "159977", "symbol": "sz159977", "secid": "0.159977", "name": "创业板ETF天弘", "group": "broad"},
+    {"code": "588000", "symbol": "sh588000", "secid": "1.588000", "name": "科创50ETF华夏", "group": "broad"}
+  ],
+  "rules": {
+    "bottom_buy": {
+      "name": "底部买入参照",
+      "note": "大跌 + 宽基ETF放量净申购 => 国家队进场的底部区域形态，分批买入参照点",
+      "drop_1d_pct": -1.5,
+      "drop_5d_pct": -4.0,
+      "inflow_1d_pct": 0.8,
+      "inflow_1d_pct_vol": 0.3,
+      "vol_multiple": 2.0
+    },
+    "avoid_chase": {
+      "name": "高位不追/止盈警示",
+      "note": "高位 + 宽基ETF连续净赎回 => 权重股失去边际买家，不追高、拥挤仓位可止盈",
+      "high_20d_pct": 8.0,
+      "high_pctile": 90,
+      "high_pctile_days": 120,
+      "redeem_days": 3,
+      "redeem_total_pct": -1.0
+    }
+  }
+}

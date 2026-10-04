@@ -1,0 +1,9 @@
+# 运行期可再生文件不入库
+.venv/
+logs/
+output/
+__pycache__/
+*.pyc
+.DS_Store
+data/*.db-shm
+data/*.db-wal
